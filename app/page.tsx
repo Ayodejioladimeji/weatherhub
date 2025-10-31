@@ -38,37 +38,40 @@ export default function Home() {
       try {
         setIsOnline(navigator.onLine)
 
-        // Only fetch fresh data if online
         if (!navigator.onLine) {
           setLoading(false)
           return
         }
 
-        // Fetch largest cities
         try {
           const citiesFromAPI = await getLargestCities(15)
           setFetchedCities(citiesFromAPI)
           dispatch(setDefaultCities(citiesFromAPI))
 
-          // Fetch fresh weather for all cities if cache is expired
-          for (const city of citiesFromAPI) {
+          const weatherPromises = citiesFromAPI.map(city => {
             const cacheKey = `${city.city},${city.country}`
             const weatherData = weather.data[cacheKey]
 
-            if (weatherData && !isCacheExpired(weatherData.timestamp)) continue
-
-            try {
-              const weatherResponse = await getWeatherByCoordinates(
-                city.latitude,
-                city.longitude,
-                city.city,
-                city.country,
-              )
-              dispatch(setWeatherData(weatherResponse))
-            } catch (error) {
-              console.error(`Failed to fetch weather for ${city.city}:`, error)
+            if (weatherData && !isCacheExpired(weatherData.timestamp)) {
+              return Promise.resolve()
             }
-          }
+
+            return getWeatherByCoordinates(
+              city.latitude,
+              city.longitude,
+              city.city,
+              city.country,
+            )
+              .then(weatherResponse => {
+                dispatch(setWeatherData(weatherResponse))
+              })
+              .catch(error => {
+                console.error(`Failed to fetch weather for ${city.city}:`, error)
+              })
+          })
+
+          await Promise.all(weatherPromises)
+
         } catch (error) {
           console.error("Failed to fetch largest cities:", error)
           setFetchedCities([])
@@ -82,6 +85,7 @@ export default function Home() {
 
     init()
   }, [dispatch])
+
 
   useEffect(() => {
     const handleOnline = () => {
