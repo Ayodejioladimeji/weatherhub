@@ -81,7 +81,7 @@ export default function Home() {
     }
 
     init()
-  }, [dispatch, weather.data])
+  }, [dispatch])
 
   useEffect(() => {
     const handleOnline = () => {

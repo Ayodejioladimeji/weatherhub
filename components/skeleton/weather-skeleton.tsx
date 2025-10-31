@@ -4,8 +4,6 @@ export default function WeatherSkeleton() {
     return (
         <div className="min-h-screen animate-pulse">
             <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
-                {/* Back Button */}
-                <div className="w-32 h-10 bg-gray-100 rounded-md" />
 
                 {/* Weather Card Skeleton */}
                 <Card className="border-gray-200 p-8 bg-gradient-to-br from-gray-50 to-gray-100">

@@ -143,9 +143,9 @@ const CityPage = () =>  {
               <>
                 {/* Weather Card */}
                 <Card className="mb-8 bg-gradient-to-br from-green-50 to-green-100 border-gray-200 p-8">
-                  <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-start justify-between flex-wrap gap-3 mb-6">
                     <div>
-                      <h1 className="text-4xl font-bold text-green-900">{weatherData.city}</h1>
+                      <h1 className="text-2xl md:text-4xl font-bold text-green-900">{weatherData.city}</h1>
                       <p className="text-lg text-green-700">{weatherData.country}</p>
                     </div>
                     <Button
@@ -192,7 +192,7 @@ const CityPage = () =>  {
 
                 {/* Notes Section */}
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold text-green-900">Weather Notes</h2>
+                  <h2 className="text-xl md:text-2xl font-bold text-green-900">Weather Notes</h2>
 
                   {/* Add/Edit Note Form */}
                   <Card className="border-gray-200 p-6">
