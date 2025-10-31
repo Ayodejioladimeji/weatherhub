@@ -7,7 +7,7 @@ import { CityCard } from "@/components/city-card"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { City, FavoriteCity } from "@/types"
+import { FavoriteCity } from "@/types"
 
 export default function FavoritesPage() {
   const dispatch = useAppDispatch()

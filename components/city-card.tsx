@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { X, Heart } from "lucide-react"
 import Link from "next/link"
-import type { WeatherData } from "@/lib/slices/weatherSlice"
+import { WeatherData } from "@/types"
 
 interface CityCardProps {
   weather: WeatherData

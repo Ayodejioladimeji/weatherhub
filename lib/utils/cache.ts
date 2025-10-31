@@ -5,7 +5,7 @@ const WEATHER_CACHE_KEY = "weather_cache"
 const FAVORITES_CACHE_KEY = "favorites_cache"
 const NOTES_CACHE_KEY = "notes_cache"
 const REMOVED_CITIES_CACHE_KEY = "removed_cities_cache"
-const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes
+const CACHE_DURATION = 30 * 60 * 1000
 
 export function saveWeatherCache(data: Record<string, WeatherData>) {
   try {
