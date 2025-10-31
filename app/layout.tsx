@@ -14,11 +14,10 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "Weather App - Global Weather Information",
+  title: "Weather Hub - Global Weather Information",
   description:
     "Search and view current weather information for cities around the world. Add your favorite cities and get detailed weather insights.",
-  keywords: "weather, forecast, cities, temperature, global",
-  robots: "index, follow"
+  keywords: "weather, forecast, cities, temperature, global"
 }
 
 export default function RootLayout({
