@@ -38,34 +38,34 @@ A modern, offline-capable weather application built with Next.js 16, Redux Toolk
 ### Installation
 
 1. Clone the repository
-\`\`\`bash
+```bash
 git clone <repository-url>
 cd weather-app
-\`\`\`
+```
 
 2. Install dependencies
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 3. Set up environment variables
 Create a `.env.local` file:
-\`\`\`
+```
 NEXT_PUBLIC_OPEN_METEO_API=https://api.open-meteo.com/v1/forecast
 NEXT_PUBLIC_GEONAMES_API=https://secure.geonames.org
 NEXT_PUBLIC_GEONAMES_USERNAME=layobright
-\`\`\`
+```
 
 4. Run development server
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Project Structure
 
-\`\`\`
+```
 weather-app/
 ├── app/
 │   ├── layout.tsx           # Root layout with Redux provider and Sonner toaster
@@ -109,7 +109,7 @@ weather-app/
 ├── tsconfig.json          # TypeScript config
 ├── next.config.mjs        # Next.js config
 └── package.json           # Dependencies
-\`\`\`
+```
 
 ## Technology Stack
 
@@ -162,7 +162,7 @@ Converts coordinates to city and country names.
 - Get city coordinates
 
 ### Usage Example
-\`\`\`typescript
+```typescript
 // Fetch weather by coordinates
 const weather = await getWeatherByCoordinates(
   latitude,
@@ -176,7 +176,7 @@ const results = await searchCities("New York")
 
 // Get largest cities
 const cities = await getLargestCities(15)
-\`\`\`
+```
 
 ## Offline Support
 
@@ -190,7 +190,7 @@ const cities = await getLargestCities(15)
 
 ### Cache Management
 
-\`\`\`typescript
+```typescript
 // Save to cache
 saveWeatherCache(weatherData)
 
@@ -204,7 +204,7 @@ if (isCacheExpired(timestamp)) {
 
 // Clear cache entry
 removeWeatherFromCache(city, country)
-\`\`\`
+```
 
 ### localStorage Keys
 - `weather_cache`: Cached weather data
@@ -244,7 +244,7 @@ removeWeatherFromCache(city, country)
 ## Redux Store Architecture
 
 ### State Shape
-\`\`\`typescript
+```typescript
 {
   weather: {
     data: Record<"city,country", WeatherData>,
@@ -263,7 +263,7 @@ removeWeatherFromCache(city, country)
     removedCities: Set<"city,country">
   }
 }
-\`\`\`
+```
 
 ### Key Slices
 
