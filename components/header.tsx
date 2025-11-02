@@ -21,14 +21,14 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden gap-8 md:flex">
+          <div className="header">
             <Link href="/" className="text-sm font-medium text-green-50 hover:text-white transition-colors">
               Home
             </Link>
             <Link href="/favorites" className="text-sm font-medium text-green-50 hover:text-white transition-colors">
               Favorites
             </Link>
-          </nav>
+          </div>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
