@@ -126,9 +126,7 @@ const CityPage = () =>  {
   }, [notes.notes])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
-      <Header />
-
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white"> 
       <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <Button onClick={() => router.back()} variant="outline" className="mb-6 gap-2 hover:bg-gray-100">
           <ArrowLeft className="h-4 w-4" />

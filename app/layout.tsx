@@ -6,6 +6,7 @@ import "./globals.css"
 import { Providers } from "@/app/providers"
 import { Toaster } from "sonner"
 import { Store } from "@/components/store-provider"
+import { Header } from "@/components/header"
 
 const lato = Lato({
   weight: ["400", "700", "900"],
@@ -33,7 +34,10 @@ export default function RootLayout({
       </head>
       <body className={`${lato.variable} font-sans antialiased`} suppressHydrationWarning>
         <Store>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Header />
+            {children}
+            </Providers>
         </Store>
         <Toaster richColors />
         <Analytics />

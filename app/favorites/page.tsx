@@ -38,8 +38,6 @@ export default function FavoritesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
-      <Header />
-
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Link href="/">
           <Button variant="outline" className="mb-6 gap-2 border-green-300 hover:bg-green-50 bg-transparent">
